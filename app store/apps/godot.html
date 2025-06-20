@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>Paint X - GoTlex Store</title>
+<!-- الخطوط من جوجل -->
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg-color: #121212;
+  --card-bg: #1f1f1f;
+  --accent: #00ffd5;
+  --text: #ffffff;
+  --hover: #00ffae;
+  --subtext: #aaaaaa;
+}
+body {
+  font-family: 'Cairo', sans-serif;
+  margin: 0;
+  background-color: var(--bg-color);
+  color: var(--text);
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--card-bg);
+  padding: 15px 30px;
+}
+.logo {
+  font-size: 1.8em;
+  font-weight: bold;
+  color: var(--accent);
+}
+.nav {
+  display: flex;
+  gap: 30px;
+}
+.nav a {
+  font-size: 1.1em;
+  font-weight: bold;
+  color: var(--text);
+  text-decoration: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  transition: background 0.3s, color 0.3s;
+}
+.nav a:hover {
+  background: var(--accent);
+  color: black;
+}
+.content {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+}
+.app-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+.app-icon {
+  width: 128px;
+  height: 128px;
+  border-radius: 15px;
+}
+.app-details {
+  flex: 1;
+}
+.app-name {
+  font-size: 2em;
+  font-weight: bold;
+  color: var(--accent);
+}
+.download-btn {
+  display: inline-block;
+  padding: 12px 30px;
+  font-size: 1.1em;
+  font-weight: bold;
+  color: black;
+  background: var(--accent);
+  text-decoration: none;
+  border-radius: 10px;
+  transition: background 0.3s;
+}
+.download-btn:hover {
+  background: var(--hover);
+}
+.description {
+  font-size: 1.2em;
+  line-height: 1.7em;
+  color: var(--subtext);
+  margin: 30px 0;
+}
+</style>
+</head>
+<body>
+
+<!-- الهيدر -->
+<div class="header">
+  <div class="logo">GoTlex Store</div>
+  <div class="nav">
+    <a href="../apps-page.html">apps</a>
+    <a href="../games-page.html">games</a>
+  </div>
+</div>
+
+<!-- المحتوى -->
+<div class="content">
+  <div class="app-header">
+    <img src=" https://blogger.googleusercontent.com/img/a/AVvXsEjDrDr-lOBsTLRTkCq1Rf4WysA1yJYiBuUgKHiaRf9tTlOzQiXzCyKVBkyDL7PY0qahroZg_dvMaLU_5P2sn-z7CdLXotMRRCURK6nzWnAECZocYXgtUg8N1hDOf-3n1bw41piBkjKqCOmtmJBq4IAmsvqlsmOUoyVyrBrOkvfktndP_thvtvrrQgd3n0s" class="app-icon" alt="Paint X">
+    <div class="app-details">
+      <div class="app-name">Godot engine</div>
+      <a href="https://download1526.mediafire.com/8qn2c0x7r0rgnc8FQI6fPEMBfDf8Y1XtSaL-pUq6hRAQ5IupgjFWv9mECsOSYRRFAAGQvtm5fPhS3auRKq-jMFoUkN35YV5vUfrbcTCFul5uKxyKH3fKFruxS2VAT6StwNzhzwQ0wXxm2MW71wrfJzl8W8w7lzmn1s6VDwWIN6rT/nqf753cjdjte59h/Godot_v4.4.1-stable_win64.exe" class="download-btn">DOWNLOAD</a>
+    </div>
+  </div>
+  
+  <div class="description">
+    Godot is a cross-platform, free and open-source game engine released under the permissive MIT license. It was initially developed in Buenos Aires by Argentine software developers Juan Linietsky and Ariel Manzur for several companies in Latin America prior to its public release in 2014.
+  </div>
+</div>
+
+<footer style="
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #1f1f1f;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 0.9em;
+  user-select: none;
+  z-index: 1000;
+">
+  © 2025 Mizar Games. كل الحقوق محفوظة.
+</footer>
+
+</body>
+</html>

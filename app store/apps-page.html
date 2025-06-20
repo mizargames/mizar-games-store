@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>📱 التطبيقات - GoTlex Store</title>
+<!-- الخطوط من جوجل -->
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg-color: #121212;
+  --card-bg: #1f1f1f;
+  --accent: #00ffd5;
+  --text: #ffffff;
+  --hover: #00ffae;
+}
+body {
+  font-family: 'Cairo', sans-serif;
+  margin: 0;
+  background-color: var(--bg-color);
+  color: var(--text);
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--card-bg);
+  padding: 15px 30px;
+}
+.left-side {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+.logo {
+  font-size: 1.8em;
+  font-weight: bold;
+  color: var(--accent);
+}
+.search-box input {
+  padding: 10px 15px;
+  font-size: 1em;
+  border-radius: 8px;
+  border: none;
+}
+.nav {
+  display: flex;
+  gap: 30px;
+}
+.nav a {
+  font-size: 1.1em;
+  font-weight: bold;
+  color: var(--text);
+  text-decoration: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  transition: background 0.3s, color 0.3s;
+}
+.nav a:hover {
+  background: var(--accent);
+  color: black;
+}
+h1 {
+  font-size: 2.5em;
+  color: var(--accent);
+  text-align: center;
+  margin: 30px 0;
+}
+.app-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 700px;
+  margin: auto;
+}
+.app-card {
+  background: var(--card-bg);
+  padding: 15px;
+  border-radius: 15px;
+}
+.app-card:hover {
+  background: var(--accent);
+}
+.app-card:hover .app-name {
+  color: black;
+}
+.app-card-link {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  text-decoration: none;
+  color: inherit;
+}
+.app-card img {
+  width: 64px;
+  height: 64px;
+  border-radius: 10px;
+}
+.app-name {
+  font-size: 1.3em;
+  font-weight: bold;
+}
+</style>
+</head>
+<body>
+
+<!-- الهيدر -->
+<div class="header">
+  <div class="left-side">
+    <div class="logo">GoTlex Store</div>
+    <div class="search-box">
+      <input id="searchInput" placeholder="search...">
+    </div>
+  </div>
+  <div class="nav">
+    <a href="index.html">home</a>
+    <a href="games-page.html">games</a>
+  </div>
+</div>
+
+<!-- العنوان -->
+<h1>📱 التطبيقات</h1>
+<div id="list" class="app-list"></div>
+
+<!-- السكربت -->
+<script>
+const apps = [
+  { file: "apps/godot.html", name: "Godot engine", icon: "  https://blogger.googleusercontent.com/img/a/AVvXsEjDrDr-lOBsTLRTkCq1Rf4WysA1yJYiBuUgKHiaRf9tTlOzQiXzCyKVBkyDL7PY0qahroZg_dvMaLU_5P2sn-z7CdLXotMRRCURK6nzWnAECZocYXgtUg8N1hDOf-3n1bw41piBkjKqCOmtmJBq4IAmsvqlsmOUoyVyrBrOkvfktndP_thvtvrrQgd3n0s" },
+  { file: "app2.html", name: "Chat AI", icon: "https://example.com/icons/chat.png" },
+  { file: "app2.html", name: "Chat AI", icon: "https://example.com/icons/chat.png" }
+
+
+];
+const container = document.getElementById("list");
+const searchInput = document.getElementById("searchInput");
+
+function displayItems(data) {
+  container.innerHTML = ""; 
+  data.forEach(app => {
+    const div = document.createElement("div");
+    div.className = "app-card";
+    div.innerHTML = `
+      <a href="${app.file}" class="app-card-link">
+        <img src="${app.icon}" alt="${app.name}">
+        <span class="app-name">${app.name}</span>
+      </a>
+    `;
+    container.appendChild(div);
+  });
+}
+displayItems(apps);
+
+// البحث
+searchInput.addEventListener("input", e => {
+  const term = e.target.value.toLowerCase();
+  const filtered = apps.filter(a => a.name.toLowerCase().includes(term));
+  displayItems(filtered);
+});
+</script>
+
+<footer style="
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #1f1f1f;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 0.9em;
+  user-select: none;
+  z-index: 1000;
+">
+  © 2025 Mizar Games. كل الحقوق محفوظة.
+</footer>
+
+</body>
+</html>
